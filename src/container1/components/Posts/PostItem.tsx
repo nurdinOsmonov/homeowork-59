@@ -6,13 +6,24 @@ interface Props {
   onNameChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const PostItem: React.FC<Props> = (props) => {
-  return (
-    <>
-      <input value={props.title} onChange={props.onNameChange}/>
-      <button onClick={props.deletePost}>X</button>
-    </>
-  );
+class PostItem extends React.Component<Props> {
+  componentDidMount() {
+    console.log('[PostItem] DidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('[PostCard] DidUpdate');
+  }
+
+  render() {
+    console.log('[PostCard] render');
+    return (
+      <>
+        <input value={this.props.title} onChange={this.props.onNameChange}/>
+        <button onClick={this.props.deletePost}>X</button>
+      </>
+    );
+  }
 }
 
 

@@ -8,7 +8,17 @@ interface Props {
   deletePost: (id: string) => void;
 }
 
-const Posts: React.FC<Props> = ({posts, changeName, deletePost}) => {
+class Posts extends React.Component<Props> {
+  componentDidMount() {
+    console.log('[Posts] DidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('[Posts] DidUpdate');
+  }
+
+  render() {
+    let {posts, changeName, deletePost} = this.props;
     return (
       <>
         {posts.map((post) => (
@@ -20,7 +30,7 @@ const Posts: React.FC<Props> = ({posts, changeName, deletePost}) => {
         ))}
       </>
     );
-
+  }
 }
 
 export default Posts;
