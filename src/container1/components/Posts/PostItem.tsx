@@ -12,11 +12,15 @@ class PostItem extends React.Component<Props> {
   }
 
   componentDidUpdate() {
-    console.log('[PostCard] DidUpdate');
+    console.log('[PostItem] DidUpdate');
+  }
+
+  shouldComponentUpdate(nextProps: Readonly<Props>): boolean {
+    return this.props.title !== nextProps.title;
   }
 
   render() {
-    console.log('[PostCard] render');
+    console.log('[PostItem] render');
     return (
       <>
         <input value={this.props.title} onChange={this.props.onNameChange}/>

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Posts from "./container1/components/Posts/Posts";
 import Form from "./container1/components/Form/Form";
 import {FilmPost} from "../types";
+import Meme from "./container1/Meme/Meme";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -34,6 +35,7 @@ function App() {
     <>
       <Form onSubmit={addPost}/>
       <Posts changeName={changePost} posts={posts} deletePost={deleteInput}/>
+      <Meme/>
     </>
   );
 }

@@ -6,3 +6,7 @@ export interface FilmPost {
 export interface FilmPostMutation {
   title: string;
 }
+
+export interface MemeCard {
+  value: string;
+}
